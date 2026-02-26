@@ -1,5 +1,14 @@
 trigger: none
 
+resources:
+  pipelines:
+    - pipeline: giopout71.finapi_giomir_build
+      source: giopout71.finapi_giomir_deploy
+      trigger:
+        branches:
+          include:
+            - main
+
 pool:
   name: student-lab-pool
 
