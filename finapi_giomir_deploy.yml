@@ -15,7 +15,7 @@ variables:
   - name: resourceGroup
     value: 'Training-Student-009-OC013'          # <-- Update this
   - name: webAppName
-    value: 'finapi-giomir>'                  # <-- Update this Azure Web App target
+    value: 'finapi-giomir'                  # <-- Update this Azure Web App target
 
 steps:
 - script: |
@@ -93,6 +93,6 @@ steps:
         --resource-group $(resourceGroup) \
         --name $(webAppName) \
         --src-path deploy.zip \
-        --type zip
-        --restart true
+        --type zip \
+        --restart true # fixes pipeline error
   displayName: 'Deploy Artifact to Azure Web App'
